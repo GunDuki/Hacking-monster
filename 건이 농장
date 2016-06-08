@@ -1,0 +1,509 @@
+#include<stdio.h>
+#include<Windows.h>
+#include<stdlib.h>
+#include<time.h>
+void shop();
+void Fall_mu();
+void Fall_apple();
+void Spring_ddalgi();
+void Spring_mesil();
+void Summer_fodo();
+void Summer_subak();
+void Winter_sekryu();
+int day=1;
+int money=50000;
+int mesil;
+int mesil_seed=5;
+int apple;
+int apple_seed;
+int mu;
+int mu_seed;
+int ddalgi;
+int ddalgi_seed=5;
+int fodo;
+int fodo_seed;
+int subak;
+int subak_seed;
+int sekryu;
+int sekryu_seed;
+int season=1;
+int subak_day=0;
+int fodo_day=0;
+int mesil_day=0;
+int ddalgi_day=0;
+int mu_day=0;
+int apple_day=0;
+int sekryu_day=0;
+int i=0;
+int input;
+int input2;
+int j=1;
+void main(){
+	if(j==1){
+		printf("하루에 1종류의 씨앗만 돌볼수있다.\n");
+		j--;
+	}
+	if(day%31==0){
+		season++;
+	}
+	if(season==5){
+		season=1;
+	}
+	if(season==1){
+		printf("봄\n");
+	}
+	else if(season==2){
+		printf("여름\n");
+	}
+	else if(season==3){
+		printf("가을\n");
+	}
+	else{
+		printf("겨울\n");
+	}
+	printf("-----%d일차-----\n",day);
+	printf("1.농장가기\t\t2.상점");
+	scanf("%d",&input);
+	switch(input){
+	case 1:
+		printf("----------농장----------\n");
+		printf("1.매실 키우기 2.딸기 키우기 3.포도 키우기 4.수박 키우기 5.무 키우기 6.사과 키우기 7.석류 키우기\n");
+		printf("매실 딸기 : 봄\t\t포도 수박 : 여름\t\t무 사과 : 가을\t\t석류 : 겨울\n");
+		scanf("%d",&input2);
+		switch(input2){
+		case 1:
+			Spring_mesil();
+			break;
+		case 2:
+			Spring_ddalgi();
+			break;
+		case 3:
+			Summer_fodo();
+			break;
+		case 4:
+			Summer_subak();
+			break;
+		case 5:
+			Fall_mu();
+			break;
+		case 6:
+			Fall_apple();
+			break;
+		case 7:
+			Winter_sekryu();
+		}
+		break;
+	case 2:
+		shop();
+	}
+}
+void Spring_mesil(){
+	if(season==1&&mesil_seed>0){
+		printf("물 주는중\n");
+		mesil_day++;
+		if(mesil_day%13==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<mesil_seed;i++){
+				mesil++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			mesil_seed=0;
+		}
+	}
+	else{
+		if(mesil_seed==0){
+			printf("씨앗도없이 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		mesil_seed=0;
+		printf("멍청한놈 매실은 봄에 심어야지!!\n");
+		}
+	}
+}
+void Spring_ddalgi(){
+	if(season==1&&ddalgi_seed>0){
+		printf("물 주는중\n");
+		ddalgi_day++;
+		if(ddalgi_day%7==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<ddalgi_seed;i++){
+				apple++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			ddalgi_seed=0;
+		}
+	}
+	else{
+		if(ddalgi_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		ddalgi_seed=0;
+		printf("멍청한놈 딸기는 봄에 심어야지!!\n");
+		}
+	}
+}
+void Summer_fodo(){
+	if(season==2&&fodo_seed>0){
+		printf("물 주는중\n");
+		fodo_day++;
+		if(fodo_day%10==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<fodo_seed;i++){
+				fodo++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			fodo_seed=0;
+		}
+	}
+	else{
+		if(fodo_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		fodo_seed=0;
+		printf("멍청한놈 포도는 여름에 심어야지!!\n");
+		}
+	}
+}
+void Summer_subak(){
+	if(season==2&&subak_seed>0){
+		printf("물 주는중\n");
+		subak_day++;
+		if(subak_day%15==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<subak_seed;i++){
+				subak++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			subak_seed=0;
+		}
+	}
+	else{
+		if(subak_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		subak_seed=0;
+		printf("멍청한놈 수박은 여름에 심어야지!!\n");
+		}
+	}
+}
+void Fall_mu(){
+	if(season==3&&mu_seed>0){
+		printf("물 주는중\n");
+		mu_day++;
+		if(mu_day%3==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<mu_seed;i++){
+				mu++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			mu_seed=0;
+		}
+	}
+	else{
+		if(mu_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		mu_seed=0;
+		printf("멍청한놈 무는 가을 심어야지!!\n");
+		}
+	}
+}
+void Fall_apple(){
+	if(season==3&&apple_seed>0){
+		printf("물 주는중\n");
+		apple_day++;
+		if(apple_day%7==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<apple_seed;i++){
+				apple++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			apple_seed=0;
+		}
+	}
+	else{
+		if(apple_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		apple_seed=0;
+		printf("멍청한놈 사과는 가을에 심어야지!!\n");
+		}
+	}
+}
+void Winter_sekryu(){
+	if(season==4&&sekryu_seed>0){
+		printf("물 주는중\n");
+		sekryu_day++;
+		if(sekryu_day%13==0){
+			printf("수확이다~~~~~~\n");
+			for(i=0;i<sekryu_seed;i++){
+				sekryu++;
+				printf("수확중\n");
+				Sleep(700);
+			}
+			sekryu_seed=0;
+		}
+	}
+	else{
+		if(sekryu_seed==0){
+			printf("씨앗도없임 뭐하냐 병ㅡ신들아\n");
+		}
+		else{
+		apple_seed=0;
+		printf("멍청한놈 석류는 겨울에 심어야지!!\n");
+		}
+	}
+}
+void shop(){
+	int su;
+
+	int mu_seed_su;
+	int sekryu_seed_su;
+	int apple_seed_su;
+	int ddalgi_seed_su;
+	int subak_seed_su;
+	int fodo_seed_su;
+	int mesil_seed_su;
+
+	int mu_sell;
+	int sekryu_sell;
+	int apple_sell;
+	int ddalgi_sell;
+	int subak_sell;
+	int fodo_sell;
+	int mesil_sell;
+
+	char input[30];
+	char mesil_input[10]="매실";
+	char mu_input[10]="무";
+	char apple_input[10]="사과";
+	char ddalgi_input[10]="딸기";
+	char fodo_input[10]="포도";
+	char subak_input[10]="수박";
+	char sekryu_input[10]="석류";
+
+	char mesil_seed_su_char[20]="매실 씨앗";
+	char mu_seed_su_char[20]="무 씨앗";
+	char apple_seed_su_char[20]="사과 씨앗";
+	char ddalgi_seed_su_char[20]="딸기 씨앗";
+	char fodo_seed_su_char[20]="포도 씨앗";
+	char subak_seed_su_char[20]="수박 씨앗";
+	char sekryu_seed_su_char[20]="석류 씨앗";
+
+	char quit[5]="quit";
+
+	srand(time(NULL));
+	mu_seed_su=rand()%30+10;
+	sekryu_seed_su=rand()%50+20;
+	apple_seed_su=rand()%40+20;
+	ddalgi_seed_su=rand()%60+30;
+	fodo_seed_su=rand()%40+30;
+	mesil_seed_su=rand()%30+20;
+	subak_seed_su=rand()%100+50;
+	//
+	mu_sell=rand()%70+30;
+	sekryu_sell=rand()%90+50;
+	apple_sell=rand()%70+40;
+	ddalgi_sell=rand()%100+50;
+	fodo_sell=rand()%70+50;
+	mesil_sell=rand()%50+30;
+	subak_sell=rand()%150+100;
+	//
+	i=1;
+	while(i){
+	printf("--------상점--------\n");
+	printf("오늘의 씨앗 가격\n");
+	printf("매실 씨앗 : %d\t\t수박 씨앗 : %d\n사과 씨앗 : %d\t\t딸기 씨앗 : %d\n포도 씨앗 : %d\t\t무 씨앗 : %d\n\t석류 씨앗 : %d\n",mesil_seed_su,
+		subak_seed_su,apple_seed_su,ddalgi_seed_su,fodo_seed_su,mu_seed_su,sekryu_seed_su);
+	printf("오늘의 농작물 판매가\n");
+	printf("매실 : %d\t\t수박 : %d\n사과 : %d\t\t딸기 : %d\n포도 : %d\t\t무 : %d\n\t석류 : %d\n",mesil_sell,subak_sell,apple_sell,ddalgi_sell,fodo_sell,mu_sell,sekryu_sell);
+	printf("사거나 팔고싶은것을 입력해주세요.\n");
+	printf("나가고싶으면 quit라고 입력해주세요");
+	printf("::");
+	fflush(stdin);
+	scanf("%s",input);
+
+	if(strcmp(input,quit)==0){
+		i--;
+	}
+	if(strcmp(input,mesil_seed_su_char)==0){
+		printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(mesil_sell*su<=money){
+			mesil_seed+=su;
+			money-=mesil_seed_su*su;
+			printf("남은돈 : %d\t\t매실 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야");
+		}
+		}
+	else if(strcmp(input,apple_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(apple_sell*su<=money){
+			apple_seed+=su;
+			money-=apple_seed_su*su;
+			printf("남은돈 : %d\t\t사과 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,mu_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(mu_sell*su<=money){
+			mu_seed+=su;
+			money-=mu_seed_su*su;
+			printf("남은돈 : %d\t\t무 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,ddalgi_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(ddalgi_sell*su<=money){
+			ddalgi_seed+=su;
+			money-=ddalgi_seed_su*su;
+			printf("남은돈 : %d\t\t딸기 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,sekryu_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(sekryu_sell*su<=money){
+			sekryu_seed+=su;
+			money-=sekryu_seed_su*su;
+			printf("남은돈 : %d\t\t석류 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,subak_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(subak_sell*su<=money){
+			subak_seed+=su;
+			money-=subak_seed_su*su;
+			printf("남은돈 : %d\t\t수박 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,fodo_seed_su_char)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(fodo_sell*su<=money){
+			fodo_seed+=su;
+			money-=fodo_seed_su*su;
+			printf("남은돈 : %d\t\t포도 씨앗 %d개를 구입",money,su);
+		}
+		else{
+			printf("야이 거지야\n");
+		}
+		}
+	else if(strcmp(input,fodo_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(fodo-su>0){
+			fodo-=su;
+			money+=fodo_seed_su*su;
+			printf("남은돈 : %d\t\t포도 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,subak_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(subak-su>0){
+			subak-=su;
+			money+=subak_seed_su*su;
+			printf("남은돈 : %d\t\t수박 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,sekryu_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(sekryu-su>0){
+			sekryu-=su;
+			money+=sekryu_seed_su*su;
+			printf("남은돈 : %d\t\t석류 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,ddalgi_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(ddalgi-su>0){
+			ddalgi-=su;
+			money+=ddalgi_seed_su*su;
+			printf("남은돈 : %d\t\t딸기 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,mu_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(mu-su>0){
+			mu-=su;
+			money+=mu_seed_su*su;
+			printf("남은돈 : %d\t\t무 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,apple_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(apple-su>0){
+			apple-=su;
+			money+=apple_seed_su*su;
+			printf("남은돈 : %d\t\t사과 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	else if(strcmp(input,mesil_input)==0){
+	printf("갯수를 입력해주세요");
+		scanf("%d",&su);
+		if(mesil-su>0){
+			mesil-=su;
+			money+=mesil_seed_su*su;
+			printf("남은돈 : %d\t\t매실 %d개를 판매",money,su);
+		}
+		else{
+			printf("숫자 맞춰라잉\n");
+		}
+		}
+	}
+}
