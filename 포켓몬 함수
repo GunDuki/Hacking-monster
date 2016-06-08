@@ -1,0 +1,31 @@
+int pig()
+{
+	static int hp=200, lv=1, ad=10, df=5;
+	printf("도야지\n");
+
+	return 0;
+}
+
+int sangdam()
+{
+	static int hp=50, lv=1, ad=50, df=1;
+	printf("King 허더\n");
+
+	return 0;
+}
+
+int tam()
+{
+	static int hp=100, lv=1, ad=20, df=5;
+	printf("탐 켄치\n");
+
+	return 0;
+}
+
+int mouse()
+{
+	static int hp=70, lv=1, ad=15, df=3;
+	printf("찍찍이\n");
+
+	return 0;
+}
